@@ -1,0 +1,28 @@
+.contact {
+    width: calc((100% - 16px) / 2);
+    border: 1px solid black;
+    padding: 16px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-areas: "name btn" "number btn";
+    gap: 4px;
+}
+
+.name {
+    grid-area: name;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.number {
+    grid-area: number;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn {
+    grid-area: btn;
+    text-align: center;
+}

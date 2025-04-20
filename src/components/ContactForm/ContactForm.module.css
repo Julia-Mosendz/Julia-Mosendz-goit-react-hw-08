@@ -1,0 +1,34 @@
+.form {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto 24px;
+}
+
+.field {
+    width: 100%;
+    height: 48px;
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.btn {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.error {
+    color: red;
+}
