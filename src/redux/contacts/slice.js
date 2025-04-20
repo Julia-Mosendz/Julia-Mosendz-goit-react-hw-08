@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchContacts, addContact, deleteContact } from "./contactsOps";
 
-
 const handlePending = (state) => {
   state.loading = true;
 };
@@ -42,6 +41,5 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, handleRejected);
   },
 });
-
 
 export const contactsReducer = contactsSlice.reducer;
