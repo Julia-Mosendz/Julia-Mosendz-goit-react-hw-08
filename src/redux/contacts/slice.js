@@ -42,4 +42,5 @@ const contactsSlice = createSlice({
   },
 });
 
+export const {flushContacts} = contactsSlice.actions
 export const contactsReducer = contactsSlice.reducer;
