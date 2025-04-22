@@ -7,14 +7,18 @@ import css from "./UserMenu.module.css";
 function UserMenu() {
   const dispatch = useDispatch();
   const userName = useSelector(selectUser).name;
+
   const handleLogout = () => {
     dispatch(flushContacts());
     dispatch(logOut());
   };
+
   return (
-    <div>
-      <p>Welcome, {userName} </p>
-      <button type="button" onClick={handleLogout}>
+    <div className={css.wrapper}>
+      <p className={css.caption}>
+        Welcome, <span className={css.userName}>{userName}</span>{" "}
+      </p>
+      <button className={css.btn} type="button" onClick={handleLogout}>
         Logout
       </button>
     </div>

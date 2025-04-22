@@ -4,7 +4,7 @@ import css from "./AuthNav.module.css";
 function AuthNav() {
   return (
     <nav>
-      <ul>
+      <ul className={css.navList}>
         <li>
           <NavLink to="/register">Register</NavLink>
         </li>

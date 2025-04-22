@@ -9,10 +9,10 @@ import css from "./AppBar.module.css";
 function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <>
+    <div className={css.nav}>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </>
+    </div>
   );
 }
 

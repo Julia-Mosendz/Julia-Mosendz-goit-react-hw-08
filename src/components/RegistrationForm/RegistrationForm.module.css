@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field {
+  padding: 0.6em 1.2em;
+  border: 1px solid darkgray;
+  border-radius: 8px;
+}
+
+.btn {
+  text-align: center;
+  color: #ffffff;
+  background-color: #646cff;
+  outline-color: rgba(100, 108, 255, 0.25);
+}

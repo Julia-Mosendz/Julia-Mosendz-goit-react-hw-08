@@ -4,15 +4,19 @@ import { fetchContacts, addContact, deleteContact } from "./operations";
 const handlePending = (state) => {
   state.loading = true;
 };
-
 const handleRejected = (state, action) => {
-  state.loading = false;
   state.error = action.payload;
+  state.loading = false;
 };
 
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: { items: [], loading: false, error: null },
+  reducers: {
+    flushContacts: (state) => {
+      state.items = [];
+    },
+  },
   extraReducers: (builder) => {
     return builder
       .addCase(fetchContacts.pending, handlePending)
@@ -42,5 +46,5 @@ const contactsSlice = createSlice({
   },
 });
 
-export const {flushContacts} = contactsSlice.actions
+export const { flushContacts } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

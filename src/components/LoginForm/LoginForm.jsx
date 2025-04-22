@@ -8,22 +8,24 @@ function LoginForm() {
   const initialValues = { email: "", password: "" };
   const handleSubmit = (event, { resetForm }) => {
     const data = { email: event.email, password: event.password };
-    dispatch(logIn(data))
-    resetForm()
+    dispatch(logIn(data));
+    resetForm();
   };
   return (
     <>
       <Formik onSubmit={handleSubmit} initialValues={initialValues}>
-        <Form>
-          <label>
+        <Form className={css.form}>
+          <label className={css.label}>
             Email
-            <Field type="email" name="email" />
+            <Field className={css.field} type="email" name="email" />
           </label>
-          <label>
+          <label className={css.label}>
             Password
-            <Field type="password" name="password" />
+            <Field className={css.field} type="password" name="password" />
           </label>
-          <button type="submit">Log in</button>
+          <button className={css.btn} type="submit">
+            Log in
+          </button>
         </Form>
       </Formik>
     </>

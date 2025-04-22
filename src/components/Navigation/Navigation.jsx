@@ -6,8 +6,8 @@ import css from "./Navigation.module.css";
 function Navigation() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <nav>
-      <ul>
+    <nav className={css.nav}>
+      <ul className={css.navList}>
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
