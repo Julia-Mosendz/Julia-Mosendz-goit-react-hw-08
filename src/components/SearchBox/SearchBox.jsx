@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter } from "../../redux/filtersSlice";
+import { changeFilter } from "../../redux/filters/slice";
 import css from "./SearchBox.module.css";
-import { selectNameFilter } from "../../redux/selectors";
+import { selectNameFilter } from "../../redux/filters/selectors";
 
 function SearchBox() {
-  const value = useSelector(selectNameFilter)
-  const dispatch = useDispatch()
+  const value = useSelector(selectNameFilter);
+  const dispatch = useDispatch();
   return (
     <div>
       <fieldset className={css.box}>
@@ -16,8 +16,8 @@ function SearchBox() {
           name="searchContact"
           value={value}
           onChange={(event) => {
-            const searchName = event.target.value.toLowerCase().trim()
-            dispatch(changeFilter({searchName}))
+            const searchName = event.target.value.toLowerCase().trim();
+            dispatch(changeFilter({ searchName }));
           }}
         />
       </fieldset>
