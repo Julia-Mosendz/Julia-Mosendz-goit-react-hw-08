@@ -2,7 +2,6 @@ import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchContacts } from "../../redux/contacts/operations";
 import {
-  selectContacts,
   selectError,
   selectFilteredContacts,
   selectLoading,
@@ -16,13 +15,9 @@ import css from "./ContactsPage.module.css";
 function ContactsPage() {
   const dispatch = useDispatch();
 
-  const allContacts = useSelector(selectContacts);
   const visibleContacts = useSelector(selectFilteredContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-
-  console.log(!(loading || !!error));
-  console.log(!!allContacts.length);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -37,7 +32,7 @@ function ContactsPage() {
           <ContactList />
         ) : (
           !(loading || !!error) &&
-          !allContacts.length && (
+          !visibleContacts.length && (
             <p className={css.notice}>📱 No contacts found...</p>
           )
         )}
